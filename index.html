@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>pizza</title>
+    <style>
+        :root {
+            --size: 256px;
+            --transition: 1s;
+        }
+        body {
+            background-color: #f5c71a;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        @keyframes x {
+            100% {
+                left: calc(100% - var(--size));
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes y {
+            100% {
+                top: calc(100% - var(--size));
+                transform: rotate(51deg);
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            width: var(--size);
+            height: var(--size);
+            animation:
+                x 6.9s linear infinite alternate,
+                y 4.3s linear infinite alternate;
+            transition-duration: var(--transition);
+        }
+        img:focus {
+            filter: invert(100%);
+            transition-duration: var(--transition);
+        }
+    </style>
+</head>
+<body>
+    <h1>happy birthday</h1>
+    <img src="pizza.gif" tabindex="0"/>
+</body>
+</html>
